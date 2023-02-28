@@ -1,15 +1,14 @@
 
-# Go-RestAPI-Bigginers
+# Create Rest Apis with Go - Begginers
 
 #### This quick start guide will take you through creating Rest Apis using Go.
 
-<blockquote>
-<p dir="auto">
-Requirements: We assume you are familiar with Go and the software already installed on your system. If you did not install it OR need a quick reference I prepared a cheat-sheet. Please find toturial from https://github.com/hakimehmordadi/Go-Cheat-Sheet/blob/main/BashScrip.sh.
-</p>
-</blockquote>
 
-# Lets get dig into the codes 🚀
+**Requirements:** We assume you are familiar with Go and the software already installed on your system. If you did not install it OR need a quick reference I prepared a cheat-sheet. Please find toturial from [Here](https://github.com/hakimehmordadi/Go-Cheat-Sheet/blob/main/BashScrip.sh/).
+
+
+
+## Lets get dig into the codes 🚀
 
 The first step to building the app is creating the structure now it’s time to get down to it. Organize your file and folders like below picture.
 
@@ -33,3 +32,47 @@ Understanding how to work with files and folders is important. See details below
 *   <code>README.md</code> Contains all required description that you provide for users.
 *   <code>app.go</code> The main file that includes all code for this sample project.
 
+## Set up a HTTP Server using Gorilla Mux
+
+[Gorilla Mux](https://github.com/gorilla/mux) is a package that allows you to create the routes required by the application and refer each of the incoming requests to the corresponding controller. Before working with the Mux package, it must be installed as follows:
+
+```
+go mod init
+go get -u github.com/gorilla/mux
+```
+The next step would be defining the first api of the program.
+
+```
+package main
+
+import (
+	"fmt"
+	"log"
+	"net/http"
+
+	"github.com/gorilla/mux"
+)
+
+func homeLink(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "Welcome home!")
+}
+
+func main() {
+	router := mux.NewRouter().StrictSlash(true)
+	router.HandleFunc("/", homeLink)
+	log.Fatal(http.ListenAndServe(":8080", router))
+}
+```
+For sure, after making any changes in the codes, we need to run the program again. Now, there are two solutions, the first one is compiling the program and running the compiled program, but to speed up the process of testing the program, you can run the <code>go run main.go</code> command, which will run the developed server without the need for compilation.
+
+The expected output after launching and sending a <code>GET</code> request to the application at <code>localhost:8080</code> is as follows.
+
+<p align="center"><img alt="Structure" src="assets/1_Cj3GjJSU7reYw49BYdQfpw.gif" /></p>
+
+
+
+
+
+
+
+<p align="center"><img alt="Structure" src="run-api.png" /></p>
