@@ -1,10 +1,10 @@
 
-#SetUp a Server with GOlang - Begginers
+## Set up the HTTP server - Begginers
 
 #### This quick start guide will take you through creating Rest Apis using Go.
 
 
-**Requirements:** We assume you are familiar with Go and the software already installed on your system. If you did not install it OR need a quick reference I prepared a cheat-sheet. Please find toturial from [Here](https://github.com/hakimehmordadi/Go-Cheat-Sheet/blob/main/BashScrip.sh/).
+**Prerequisites:** We assume that you have GO installed and you are familiar with Go already. If not, check it out [Here](https://github.com/hakimehmordadi/Go-Cheat-Sheet/blob/main/BashScrip.sh/).
 
 
 
@@ -67,13 +67,9 @@ For sure, after making any changes in the codes, we need to run the program agai
 
 The expected output after launching and sending a <code>GET</code> request to the application at <code>localhost:8080</code> is as follows.
 
+### Expected results in [Postman](https://www.getpostman.com/)
+
 <p align="center"><img alt="Api-Running" src="assets/run-api.png" /></p>
-
-<p align="center"><img alt="Calb me" src="assets/1_Cj3GjJSU7reYw49BYdQfpw.gif" /></p>
-
-
-
-
 
 
 
